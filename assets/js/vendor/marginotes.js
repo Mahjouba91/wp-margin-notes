@@ -28,7 +28,7 @@
     $.fn.marginotes = function (options) {
       options = options || {}
       var field = options.field || 'desc'
-      var spans = this.filter('span')
+      var spans = this.filter('span, strong, em, a')
 
       $('body').append('<div class="margintooltip" style="display: none;"></div>')
       spans.css({
