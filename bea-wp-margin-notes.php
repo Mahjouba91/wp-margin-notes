@@ -66,9 +66,4 @@ add_action( 'plugins_loaded', 'init_bea_wpmn_plugin' );
 function init_bea_wpmn_plugin() {
 	// Client
 	\BEA\WPMN\Main::get_instance();
-
-	// Admin
-	if ( is_admin() ) {
-		\BEA\WPMN\Admin\Main::get_instance();
-	}
 }
