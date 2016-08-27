@@ -35,7 +35,7 @@ class Main {
 	 * Load margin notes script on singular tpl
 	 */
 	public function enqueue_marginotes_lib() {
-		$script_registration = wp_register_script( 'margin-notes', BEA_WPMN_DIR . 'assets/js/vendor/marginotes.js', array( 'jquery' ), false, true);
+		$script_registration = wp_register_script( 'margin-notes', BEA_WPMN_URL . 'assets/js/vendor/marginotes.js', array( 'jquery' ), false, true);
 		if ( false === $script_registration ) {
 			trigger_error( __( 'BEA WP Margin Notes : wp_register_script fails to register assets/js/vendor/marginotes.js', 'bea-wp-margin-notes' ) );
 		}
