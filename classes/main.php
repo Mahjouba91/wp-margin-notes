@@ -1,5 +1,6 @@
 <?php
 namespace BEA\WPMN;
+use BEA\WPMN\Shortcodes\Shortcode_Factory;
 
 /**
  * The purpose of the main class is to init all the plugin base code like :
@@ -21,6 +22,7 @@ class Main {
 	protected function init() {
 		add_action( 'init', array( $this, 'init_translations' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_marginotes_lib' ) );
+		add_action( 'init', array( $this, 'init_shortcodes' ) );
 	}
 
 	/**
@@ -52,4 +54,7 @@ class Main {
 		}
 	}
 
+	public static function init_shortcodes() {
+		Shortcode_Factory::register( 'Margin_Notes' ); // Initialise the shortcode
+	}
 }
