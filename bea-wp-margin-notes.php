@@ -1,10 +1,10 @@
 <?php
 /*
- Plugin Name: BEA Plugin Name
+ Plugin Name: BEA WP Margin Notes
  Version: 1.0.0
  Version Boilerplate: 2.1.3
  Plugin URI: http://www.beapi.fr
- Description: Your plugin description
+ Description: Simply add margin notes to your content by just add a desc HTML attribute
  Author: BE API Technical team
  Author URI: http://www.beapi.fr
  Domain Path: languages
