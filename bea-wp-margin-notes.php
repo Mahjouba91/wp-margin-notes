@@ -2,7 +2,7 @@
 /*
  Plugin Name: BEA WP Margin Notes
  Version: 1.0.0
- Version Boilerplate: 2.1.3
+ Version Boilerplate: 2.2.0
  Plugin URI: http://www.beapi.fr
  Description: Simply add margin notes to your content by just add a desc HTML attribute
  Author: BE API Technical team
