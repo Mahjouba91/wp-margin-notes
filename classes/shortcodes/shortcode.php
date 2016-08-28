@@ -25,7 +25,7 @@ abstract class Shortcode {
 
 	/**
 	 * Flag for shortcake module
-	 * @since   2.1.3
+	 * @since   2.2.0
 	 */
 	protected $shortcake_support = false;
 
