@@ -54,7 +54,7 @@ class Margin_Notes extends Shortcode {
 			'label' => 'Margin Notes',
 
 			// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
-			'listItemImage' => 'dashicons-editor-quote',
+			'listItemImage' => 'dashicons-format-aside',
 
 			// Available shortcode attributes and default values. Required. Array.
 			// Attribute model expects 'attr', 'type' and 'label'
@@ -71,18 +71,18 @@ class Margin_Notes extends Shortcode {
 					'attr'        => 'tag',
 					'type' => 'select',
 					'options' => array(
-						'span' => 'Span',
-						'em' => 'Em',
-						'strong' => 'Strong',
-						'a' => 'Link (a)',
+						'span' => '<span>',
+						'em' => '<em>',
+						'strong' => '<strong>',
+						'a' => '<a>',
 					),
-					'description' => 'Optional',
+					'description' => 'Optional (<span> by default)',
 				),
 				array(
 					'label'       => 'Link',
 					'attr'        => 'link',
 					'type' => 'url',
-					'description' => 'The url of the link if you choose "a" tag',
+					'description' => 'The url of the link if you choose <a> tag',
 				),
 			),
 			'inner_content' => array(
