@@ -9,11 +9,6 @@ class Margin_Notes extends Shortcode {
 	protected $tag = 'margin_notes';
 
 	/**
-	 * Flag for shortcake module
-	 */
-	protected $shortcake_support = true;
-
-	/**
 	 * List of supported attributes and their defaults
 	 *
 	 * @var array
@@ -47,48 +42,59 @@ class Margin_Notes extends Shortcode {
 		return $output;
 	}
 
+	public function add() {
+		add_shortcode( $this->tag, array( $this, 'render' ) );
+		if ( function_exists( 'shortcode_ui_register_for_shortcode' ) ) {
+			$this->add_shortcake_support();
+		}
+	}
+
 	protected function add_shortcake_support() {
-		$this->register_shortcode_ui( array(
 
-			// Display label. String. Required.
-			'label' => 'Margin Notes',
+		shortcode_ui_register_for_shortcode(
+			$this->tag,
+			array(
 
-			// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
-			'listItemImage' => 'dashicons-format-aside',
+				// Display label. String. Required.
+				'label' => 'Margin Notes',
 
-			// Available shortcode attributes and default values. Required. Array.
-			// Attribute model expects 'attr', 'type' and 'label'
-			// Supported field types: text, checkbox, textarea, radio, select, email, url, number, and date.
-			'attrs' => array(
-				array(
-					'label'       => 'Margin Note',
-					'attr'        => 'desc',
-					'type' => 'textarea',
-					'description' => 'The text of the margin note',
-				),
-				array(
-					'label'       => 'HTML Tag',
-					'attr'        => 'tag',
-					'type' => 'select',
-					'options' => array(
-						'span' => '<span>',
-						'em' => '<em>',
-						'strong' => '<strong>',
-						'a' => '<a>',
+				// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
+				'listItemImage' => 'dashicons-format-aside',
+
+				// Available shortcode attributes and default values. Required. Array.
+				// Attribute model expects 'attr', 'type' and 'label'
+				// Supported field types: text, checkbox, textarea, radio, select, email, url, number, and date.
+				'attrs' => array(
+					array(
+						'label'       => 'Margin Note',
+						'attr'        => 'desc',
+						'type' => 'textarea',
+						'description' => 'The text of the margin note',
 					),
-					'description' => 'Optional (<span> by default)',
+					array(
+						'label'       => 'HTML Tag',
+						'attr'        => 'tag',
+						'type' => 'select',
+						'options' => array(
+							'span' => '<span>',
+							'em' => '<em>',
+							'strong' => '<strong>',
+							'a' => '<a>',
+						),
+						'description' => 'Optional (<span> by default)',
+					),
+					array(
+						'label'       => 'Link',
+						'attr'        => 'link',
+						'type' => 'url',
+						'description' => 'The url of the link if you choose <a> tag',
+					),
 				),
-				array(
-					'label'       => 'Link',
-					'attr'        => 'link',
-					'type' => 'url',
-					'description' => 'The url of the link if you choose <a> tag',
+				'inner_content' => array(
+					'label' => 'Text',
 				),
-			),
-			'inner_content' => array(
-				'label' => 'Text',
-			),
-		) );
+			)
+		);
 	}
 
 }
