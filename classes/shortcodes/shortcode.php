@@ -27,7 +27,7 @@ abstract class Shortcode {
 	 * Flag for shortcake module
 	 * @since   2.1.3
 	 */
-	protected $shortcake_enabled = false;
+	protected $shortcake_support = false;
 
 	/**
 	 * List of supported attributes and their defaults
@@ -45,7 +45,7 @@ abstract class Shortcode {
 	public function add() {
 		add_shortcode( $this->tag, array( $this, 'render' ) );
 
-		if ( $this->shortcake_enabled ) {
+		if ( $this->shortcake_support ) {
 			$this->add_shortcake_support( );
 		}
 	}

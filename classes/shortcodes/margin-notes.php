@@ -11,7 +11,7 @@ class Margin_Notes extends Shortcode {
 	/**
 	 * Flag for shortcake module
 	 */
-	protected $shortcake_enabled = true;
+	protected $shortcake_support = true;
 
 	/**
 	 * List of supported attributes and their defaults
