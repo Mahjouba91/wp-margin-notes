@@ -1,7 +1,7 @@
 <?php
-namespace BEA\WPMN\Shortcodes;
+namespace WPMN\Shortcodes;
 
-use BEA\WPMN\Singleton;
+use WPMN\Singleton;
 
 
 /**
@@ -10,7 +10,7 @@ use BEA\WPMN\Singleton;
  *
  * Class Shortcode
  *
- * @package BEA\WPMN\Shortcodes
+ * @package WPMN\Shortcodes
  * @since   2.1.0
  */
 abstract class Shortcode {

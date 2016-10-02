@@ -1,5 +1,5 @@
 <?php
-namespace BEA\WPMN\Shortcodes;
+namespace WPMN\Shortcodes;
 
 /**
  * The purpose of this factory is to create shortcodes easily
@@ -12,7 +12,7 @@ namespace BEA\WPMN\Shortcodes;
  *
  * Class Shortcode_Factory
  *
- * @package BEA\WPMN\Shortcodes
+ * @package WPMN\Shortcodes
  * @since   2.1.0
  */
 class Shortcode_Factory {
@@ -24,7 +24,7 @@ class Shortcode_Factory {
 	 * @param $class_name Shortcode the Shortcode ClassName to register
 	 *
 	 * @since 2.1.0
-	 * @return \BEA\WPMN\Shortcodes\Shortcode|bool Instance of the Shortcode added or false on failure
+	 * @return \WPMN\Shortcodes\Shortcode|bool Instance of the Shortcode added or false on failure
 	 */
 	public static function register( $class_name ) {
 		$class_name = __NAMESPACE__ . '\\' . $class_name;

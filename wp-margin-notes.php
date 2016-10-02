@@ -1,18 +1,18 @@
 <?php
 /*
- Plugin Name: BEA WP Margin Notes
+ Plugin Name: WP Margin Notes
  Version: 1.0.0
  Version Boilerplate: 2.2.0
- Plugin URI: http://www.beapi.fr
+ Plugin URI: https://github.com/Mahjouba91/wp-margin-notes
  Description: Simply add margin notes to your content by just add a desc HTML attribute
- Author: BE API Technical team
- Author URI: http://www.beapi.fr
+ Author: Florian TIAR
+ Author URI: http://tiar-florian.fr
  Domain Path: languages
- Text Domain: bea-wp-margin-notes
+ Text Domain: wp-margin-notes
 
  ----
 
- Copyright 2016 BE API Technical team (human@beapi.fr)
+ Copyright 2016 Florian TIAR
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -35,20 +35,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'BEA_WPMN_VERSION', '1.0.0' );
-define( 'BEA_WPMN_MIN_PHP_VERSION', '5.4' );
-define( 'BEA_WPMN_VIEWS_FOLDER_NAME', 'bea-wpmn' );
+define( 'WPMN_VERSION', '1.0.0' );
+define( 'WPMN_MIN_PHP_VERSION', '5.4' );
+define( 'WPMN_VIEWS_FOLDER_NAME', 'wpmn' );
 
 // Plugin URL and PATH
-define( 'BEA_WPMN_URL', plugin_dir_url( __FILE__ ) );
-define( 'BEA_WPMN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'WPMN_URL', plugin_dir_url( __FILE__ ) );
+define( 'WPMN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'WPMN_PLUGIN_DIRNAME', basename( rtrim( dirname( __FILE__ ), '/' ) ) );
+define( 'WPMN_TXTDOMAIN', 'wp-margin-notes' );
 
 // Check PHP min version
-if ( version_compare( PHP_VERSION, BEA_WPMN_MIN_PHP_VERSION, '<' ) ) {
-	require_once( BEA_WPMN_DIR . 'compat.php' );
+if ( version_compare( PHP_VERSION, WPMN_MIN_PHP_VERSION, '<' ) ) {
+	require_once( WPMN_DIR . 'compat.php' );
 
 	// possibly display a notice, trigger error
-	add_action( 'admin_init', array( 'BEA\WPMN\Compatibility', 'admin_init' ) );
+	add_action( 'admin_init', array( 'WPMN\Compatibility', 'admin_init' ) );
 
 	// stop execution of this file
 	return;
@@ -57,13 +59,13 @@ if ( version_compare( PHP_VERSION, BEA_WPMN_MIN_PHP_VERSION, '<' ) ) {
 /**
  * Autoload all the things \o/
  */
-require_once BEA_WPMN_DIR . 'autoload.php';
+require_once WPMN_DIR . 'autoload.php';
 
-add_action( 'plugins_loaded', 'init_bea_wpmn_plugin' );
+add_action( 'plugins_loaded', 'init_wpmn_plugin' );
 /**
  * Init the plugin
  */
-function init_bea_wpmn_plugin() {
+function init_wpmn_plugin() {
 	// Client
-	\BEA\WPMN\Main::get_instance();
+	\WPMN\Main::get_instance();
 }

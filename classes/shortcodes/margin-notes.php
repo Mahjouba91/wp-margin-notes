@@ -1,5 +1,5 @@
 <?php
-namespace BEA\WPMN\Shortcodes;
+namespace WPMN\Shortcodes;
 
 class Margin_Notes extends Shortcode {
 
@@ -56,7 +56,7 @@ class Margin_Notes extends Shortcode {
 			array(
 
 				// Display label. String. Required.
-				'label' => 'Margin Notes',
+				'label' => __( 'Margin Notes', WPMN_TXTDOMAIN ),
 
 				// Icon/image for shortcode. Optional. src or dashicons-$icon. Defaults to carrot.
 				'listItemImage' => 'dashicons-format-aside',
@@ -66,13 +66,13 @@ class Margin_Notes extends Shortcode {
 				// Supported field types: text, checkbox, textarea, radio, select, email, url, number, and date.
 				'attrs' => array(
 					array(
-						'label'       => 'Margin Note',
+						'label'       => __( 'Margin Note', WPMN_TXTDOMAIN ),
 						'attr'        => 'desc',
 						'type' => 'textarea',
-						'description' => 'The text of the margin note',
+						'description' => __( 'The text of the margin note', WPMN_TXTDOMAIN ),
 					),
 					array(
-						'label'       => 'HTML Tag',
+						'label'       => __( 'HTML Tag', WPMN_TXTDOMAIN ),
 						'attr'        => 'tag',
 						'type' => 'select',
 						'options' => array(
@@ -81,17 +81,17 @@ class Margin_Notes extends Shortcode {
 							'strong' => '<strong>',
 							'a' => '<a>',
 						),
-						'description' => 'Optional (<span> by default)',
+						'description' => __( 'Optional (<pre><span></pre> by default)', WPMN_TXTDOMAIN ),
 					),
 					array(
-						'label'       => 'Link',
+						'label'       => __( 'Link', WPMN_TXTDOMAIN ),
 						'attr'        => 'link',
 						'type' => 'url',
-						'description' => 'The url of the link if you choose <a> tag',
+						'description' => __( 'The url of the link if you choose <a> tag', WPMN_TXTDOMAIN ),
 					),
 				),
 				'inner_content' => array(
-					'label' => 'Text',
+					'label' => __( 'Text', WPMN_TXTDOMAIN ),
 				),
 			)
 		);

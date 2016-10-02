@@ -1,5 +1,5 @@
 <?php
-namespace BEA\WPMN;
+namespace WPMN;
 
 /**
  * Singleton base class for having singleton implementation
@@ -10,7 +10,7 @@ namespace BEA\WPMN;
  * /!\ The get_instance method have to be implemented !
  *
  * Class Singleton
- * @package BEA\WPMN
+ * @package WPMN
  */
 trait Singleton {
 

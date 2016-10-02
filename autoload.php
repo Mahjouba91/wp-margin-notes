@@ -1,5 +1,5 @@
 <?php
-namespace BEA\WPMN;
+namespace WPMN;
 
 /**
  * An example of a general-purpose implementation that includes the optional
@@ -187,10 +187,10 @@ class Autoloader {
 }
 
 // instantiate the loader
-$loader = new \BEA\WPMN\Autoloader;
+$loader = new \WPMN\Autoloader;
 
 // register the autoloader
 $loader->register();
 
 // register the base directories for the namespace prefix
-$loader->addNamespace( 'BEA\WPMN', BEA_WPMN_DIR . 'classes' );
+$loader->addNamespace( 'WPMN', WPMN_DIR . 'classes' );
